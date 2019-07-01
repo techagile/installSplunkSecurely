@@ -1,0 +1,13 @@
+---
+# tasks file for splunk_server
+- name: launch the new ec2 instance
+  ec2:
+    group: "{{ ec2_sg_name }}"
+    instance_type: "{{ ec2_instance_type }}"
+    image: "{{ ec2_image }}"
+    wait: true
+    region: "{{ ec2_region }}"
+    keypair: "{{ ec2_keypair }}"
+    count: 1
+    user_data: "{{ lookup('file', 'user_data.sh') }}"
+    register: ec2

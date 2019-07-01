@@ -1,0 +1,6 @@
+---
+- name: ec2 playbook
+  include: aws_sg.yml
+  #  include: ec2_launch.yml
+  #  include: wait_for_ssh.yml
+  #  include: add_tag_ec2.yml
